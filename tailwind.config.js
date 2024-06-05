@@ -4,6 +4,8 @@ export default {
   theme: {
     colors: {
       orange: "#FE7316",
+      textColor: "#3e4b5f",
+      darkGreen: "#62a403",
     },
     extend: {},
   },
