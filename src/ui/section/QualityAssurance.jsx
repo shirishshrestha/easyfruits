@@ -8,7 +8,6 @@ gsap.registerPlugin(ScrollTrigger);
 
 const QualityAssurance = () => {
   const qualityRef = useRef();
-  const scrubRef = useRef();
   useGSAP(() => {
     gsap.from(qualityRef.current, {
       y: 100,
