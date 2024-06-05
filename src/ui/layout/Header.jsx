@@ -4,7 +4,9 @@ const Header = () => {
   return (
     <header className="py-[0.5rem] flex justify-between items-center">
       <figure className="w-[120px]">
-        <img src="/logo.png" alt="" />
+        <a href="/">
+          <img src="/logo.png" alt="" />
+        </a>
       </figure>
       <Navbar />
       <figure className="flex gap-[0.5rem]">

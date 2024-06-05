@@ -9,17 +9,17 @@ const ContactInfo = () => {
     <div className="bg-[#000] text-[#fff] text-[0.875rem] py-[0.8rem]">
       <div id="main_container" className="flex justify-between items-center">
         <div className="flex gap-[2rem]">
-          <p className="flex gap-[0.5rem] font-[500]">
+          <p className="flex gap-[0.5rem] font-[500] items-center justify-center">
             <PhoneSvg />
             <a href="tel:+977 9802036470">+977 9802036470</a>
           </p>
-          <p className="flex  gap-[0.5rem] font-[500]">
+          <p className="flex  gap-[0.5rem] font-[500] items-center justify-center">
             <MailSvg />
             <a href="mailto:easyfruitsnepal@gmail.com">
               easyfruitsnepal@gmail.com
             </a>
           </p>
-          <p className="flex  gap-[0.5rem] font-[500]">
+          <p className="flex  gap-[0.5rem] font-[500] items-center justify-center">
             <LocationSvg />
             <a href="mailto:easyfruitsnepal@gmail.com">Kupondole, Lalitpur</a>
           </p>
