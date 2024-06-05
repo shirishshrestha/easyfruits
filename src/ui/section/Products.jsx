@@ -1,8 +1,28 @@
+import { useRef } from "react";
 import { Cards, SectionTitle } from "../../components";
+import { useGSAP } from "@gsap/react";
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+gsap.registerPlugin(ScrollTrigger);
 
 const Products = () => {
+  const productsRef = useRef();
+  useGSAP(() => {
+    gsap.from(productsRef.current, {
+      y: 100,
+      duration: 1,
+      opacity: 0,
+      scrollTrigger: {
+        trigger: productsRef.current,
+        start: "top center",
+        end: "bottom bottom",
+        markers: true,
+        toggleActions: "play none none reverse",
+      },
+    });
+  }, [{ scope: productsRef }]);
   return (
-    <div className="py-[50px]">
+    <div ref={productsRef} className="py-[50px]">
       <div className="flex flex-col items-center justify-center">
         <SectionTitle title="FRUITS GO EASY" />
         <h2 className="heading">Our Products</h2>

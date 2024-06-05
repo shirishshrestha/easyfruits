@@ -3,7 +3,7 @@ import { BiSolidQuoteAltLeft } from "react-icons/bi";
 
 const Dietician = () => {
   return (
-    <div className="py-[50px]">
+    <div className="pt-[50px] pb-[100px]">
       <div className="flex flex-col items-center justify-center">
         <SectionTitle title="DIETICIAN" />
         <h2 className="heading pb-[1.5rem]">Meet our Expert</h2>
