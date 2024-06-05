@@ -14,9 +14,8 @@ const Products = () => {
       opacity: 0,
       scrollTrigger: {
         trigger: productsRef.current,
-        start: "top center",
+        start: "top 55%",
         end: "bottom bottom",
-        markers: true,
         toggleActions: "play none none reverse",
       },
     });

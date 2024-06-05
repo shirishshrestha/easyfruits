@@ -1,14 +1,67 @@
 import { QualityAssurancePoints, SectionTitle } from "../../components";
 
+import { useGSAP } from "@gsap/react";
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { useRef } from "react";
+gsap.registerPlugin(ScrollTrigger);
+
 const QualityAssurance = () => {
+  const qualityRef = useRef();
+  const scrubRef = useRef();
+  useGSAP(() => {
+    gsap.from(qualityRef.current, {
+      y: 100,
+      duration: 1,
+      opacity: 0,
+      scrollTrigger: {
+        trigger: qualityRef.current,
+        start: "top 55%",
+        end: "bottom bottom",
+        toggleActions: "play none none reverse",
+      },
+    });
+    gsap.from(".scrubEffect", {
+      x: 500,
+      opacity: 0,
+      duration: 1,
+      stagger: 0.3,
+      scrollTrigger: {
+        trigger: ".scrubEffect",
+        start: "top 70%",
+        end: "bottom bottom",
+        toggleActions: "play none none reverse",
+      },
+    });
+    gsap.from(".scrubLeftEffect", {
+      x: -500,
+      opacity: 0,
+      duration: 1,
+      stagger: 0.3,
+      ease: "power2.out",
+      scrollTrigger: {
+        trigger: ".scrubEffect",
+        start: "top 70%",
+        end: "bottom bottom",
+        toggleActions: "play none none reverse",
+      },
+    });
+    gsap.from(".orange", {
+      duration: 1.2,
+      y: 20,
+      yoyo: true,
+      ease: "power1.inOut",
+      repeat: -1,
+    });
+  }, [{ scope: qualityRef }]);
   return (
-    <div className="py-[50px]">
+    <div ref={qualityRef} className="py-[50px] overflow-hidden">
       <div className="py-[100px] bg-[url(/quality.png)] ">
         <div id="main_container ">
           <SectionTitle title={"QUALITY ASSURANCE"} />
           <h2 className="heading text-center pb-[1.5rem]">Quality Assurance</h2>
           <div className="flex justify-center items-start">
-            <div className=" max-w-[25%] flex flex-col w-full">
+            <div className="scrubLeftEffect max-w-[25%] flex flex-col w-full">
               <div className=" flex ">
                 <QualityAssurancePoints
                   className={"text-right mr-[1.5rem]"}
@@ -50,10 +103,10 @@ const QualityAssurance = () => {
               </div>
             </div>
             <figure className="max-w-[300px] mx-[58px]">
-              <img src="/orange.png" alt="" className="" />
+              <img src="/orange.png" alt="" className="orange" />
             </figure>
 
-            <div className=" max-w-[25%]  flex flex-col w-ful ">
+            <div className="scrubEffect max-w-[25%]  flex flex-col w-ful ">
               <div className="flex">
                 <figure className="quality_icons">
                   <img src="/annual.png" alt="" className="h-[33px] w-[33px]" />
