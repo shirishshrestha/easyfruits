@@ -8,6 +8,28 @@
   margin: 0 auto;
 }
 
+#main_container > .quality-assurance-container {
+  max-width: none;
+  padding: 0;
+  margin: 0;
+}
 .heading {
   @apply text-[#323232] text-[3.125rem] font-[700];
+}
+
+.quality_icons {
+  @apply w-[130px] h-[80px] flex items-center;
+}
+
+.footer_icons {
+  @apply h-[3rem] w-[3rem] rounded-full bg-[#fff] flex items-center justify-center hover:bg-[#000] hover:border hover:border-orange transition-all ease-in-out duration-500;
+}
+
+.footer__svg {
+  @apply text-lg text-[#000] group-hover:text-[#fff] group-hover:transition-all group-hover:duration-500;
+}
+
+::selection {
+  background-color: black;
+  color: white;
 }

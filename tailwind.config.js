@@ -7,7 +7,11 @@ export default {
       textColor: "#3e4b5f",
       darkGreen: "#62a403",
     },
-    extend: {},
+    extend: {
+      boxShadow: {
+        "3xl": "5px 5px 30px 10px rgb(248 248 248)",
+      },
+    },
   },
   plugins: [],
 };

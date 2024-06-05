@@ -1,8 +1,11 @@
 import { Navbar } from "../../components";
 
-const Header = () => {
+const Header = ({ navbarRef }) => {
   return (
-    <header className="py-[0.5rem] flex justify-between items-center">
+    <header
+      ref={navbarRef}
+      className="py-[0.5rem] flex justify-between items-center "
+    >
       <figure className="w-[120px]">
         <a href="/">
           <img src="/logo.png" alt="" />

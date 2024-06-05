@@ -1,8 +1,11 @@
 import { Button } from "../../components";
 
-const HeroSection = () => {
+const HeroSection = ({ heroRef }) => {
   return (
-    <div className="bg-[url(/hero_bg.png)] h-full bg-no-repeat bg-cover py-[100px]">
+    <div
+      ref={heroRef}
+      className="bg-[url(/hero_bg.png)] h-full bg-no-repeat bg-cover py-[100px]"
+    >
       <h1 className="text-[4.0625rem] font-[700] leading-[5rem] text-[#333333]">
         Your healthy eating partner <p className="text-orange">Easy Fruits</p>
       </h1>

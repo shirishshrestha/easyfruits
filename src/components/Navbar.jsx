@@ -1,9 +1,12 @@
 import React from "react";
 
-const Navbar = () => {
+const Navbar = ({ navbarRef }) => {
   return (
     <nav>
-      <ul className="flex text-[1.0625rem] font-[500] gap-[1.5rem] text-textColor">
+      <ul
+        ref={navbarRef}
+        className="flex text-[1.0625rem] font-[500] gap-[1.5rem] text-textColor"
+      >
         <li className="!text-darkGreen cursor-pointer">Home</li>
         <li className="cursor-pointer">About Us</li>
         <li className="cursor-pointer">Nutritional Information</li>
